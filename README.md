@@ -1,4 +1,4 @@
-[![MasterHead](https://github.com/Auspicious-EX/CultureConnect/blob/main/IMG/banner.gif?raw=true)](https://)
+[![MasterHead](https://github.com/Auspicious-EX/CropSense/blob/main/IMG/Your%20Signature,%20Your%20Way.gif?raw=true)](https://)
 
 # CropSense
 CropSense is an innovative agricultural platform designed to empower farmers with data-driven insights for optimal crop selection and cultivation strategies. It leverages advanced technology and machine learning to provide personalized recommendations and actionable insights to improve agricultural productivity and sustainability.
