@@ -37,17 +37,19 @@ CropSense provides farmers with an intuitive interface to input key land paramet
 ## Steps to Run the CropSense Code
 
 1. **Clone the Repository**
-   ```sh
-   git clone LINK
-   cd FOLDER```
+```sh
+        git clone LINK
+        cd FOLDER
+```
 
 2. **Set Up Virtual Environment**
-    ```python3 -m venv venv
-        source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    ```
+```python3 -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate
+```
 
 3. **Install Dependencies**
-```pip install -r requirements.txt
+```
+pip install -r requirements.txt
 ```
 
 4. **Set Up the Database**
@@ -57,19 +59,22 @@ CropSense provides farmers with an intuitive interface to input key land paramet
 - Update the DATABASES settings in settings.py with your database credentials.
 
 5. **Apply Migrations**
-```python manage.py makemigrations
+```
+python manage.py makemigrations
 python manage.py migrate
 ```
 
 6. **Run the Development Server**
-```python manage.py runserver
+```
+python manage.py runserver
 ```
 
 7. **Access the Application**
 - Open your web browser and go to `http://127.0.0.1:8000`.
 
 8. **Create a Superuser (Optional)**
-```python manage.py createsuperuser
+```
+python manage.py createsuperuser
 ```
 
 ## Understanding Plagiarism
