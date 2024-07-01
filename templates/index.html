@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+
+    div.container{
+      height: 600px;
+      border-radius: 20px ;
+      margin-top: 30px;
+      margin-bottom: 100px;
+
+      background-image: url("https://i.pinimg.com/736x/08/1a/ed/081aed2e7ddc029f940021ddb22145fc.jpg");}
+
+    div.friend2field{
+      font-weight: bold;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+    body {
+      
+      background-image: url('https://images5.alphacoders.com/111/1119534.jpg');
+    }
+
+    .btn{
+      float:right;
+      font-weight: bold;
+      border: 5px solid #555555;
+
+
+
+    }
+
+    nav {
+    background-color: #ffffff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo img {
+    width: 120px; /* Adjust the width as needed */
+    justify-items: center;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-top: -40px;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    color: #020202;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+}
+
+.nav-links li a:hover {
+    color: #21ea82;
+    font-size: large;
+    transition: 0.5s;
+}
+
+.btn-dark {
+    background-color: #3ab733; /* Default background color */
+    color: #fff; /* Default text color */
+    transition: background-color 0.3s; /* Smooth transition effect */
+    margin: 30px;
+    margin-right: 500px;
+
+    /* Add padding, border, and other styles as needed */
+}
+
+.btn-dark:hover {
+    background-color: #3cc688; /* Background color on hover */
+    /* You can also adjust other properties like text color, box-shadow, etc. */
+}
+
+/* Footer */
+
+.footer {
+  background-color: #545454;
+  border-radius: 10px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 70px;
+  margin-bottom: 100px;
+  background-color: #ffffff;
+  color: #292929;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-info {
+  max-width: 50%;
+}
+
+.footer-info-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.footer-info-text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.contact-info {
+  margin-top: 15px;
+}
+
+.contact-info a {
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.footer-logo {
+  max-width: 40%;
+}
+
+.fp {
+  font-size: large;
+}
+
+.footer-logo img {
+  margin-top: 40px;
+  margin-left: 100px;
+  width: 60%;
+}
+
+
+
+
+
+    </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Crop Prediction</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo" id="na">
+          <img src="logo.png"  alt="Pixet Logo">
+      </div>
+      <ul class="nav-links">
+          <li><a href="#na">Home</a></li>
+          <li><a href="#us">Use</a></li>
+          <li><a href="#cre">Creator</a></li>
+      </ul>
+
+    </nav>
+
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Welcome to Crop Prediction!</strong> Predict the perfect crop to grow in your farm !!!
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">×</span>
+  </button>
+</div>
+
+
+<div class="container">
+
+  <form action='/analyze' method='post'> {% csrf_token %}
+
+    <div class="friend2field">
+      <label for="url">Enter Nitrogen(N) value:</label>
+      <input  name="nitrogen" type="number" placeholder="Enter value in ppm" step="1" min="0" onchange="this.value = parseInt(this.value);" required>
+    </div>
+    <br>
+  
+    <div class="friend2field">
+      <label for="url">Enter Phosphorous(P) value:</label>
+      <input name="phosphorous" type="number" placeholder="Enter value in ppm" step="1" min="0" onchange="this.value = parseInt(this.value);" required>
+    </div>
+    <br>
+  
+    <div class="friend2field">
+      <label for="url">Enter Potassium(K) value:</label>
+      <input name="potassium" type="number" placeholder="Enter value in ppm" step="1" min="0" onchange="this.value = parseInt(this.value);" required>
+    </div>
+    <br>
+
+    <div class="friend2field">
+      <label for="url">Enter Temperature Value:</label>
+      <input name="temperature" type="number" placeholder="Enter value in °C" step="0.01" min="0"  required>
+    </div>
+    <br>
+  
+    <div class="friend2field">
+      <label for="url">Enter Humidity Value:</label>
+      <input name="humidity" type="number" placeholder="Enter value from 0-100" step="0.01" min="0" max="100" required>
+    </div>
+    <br>
+  
+    <div class="friend2field">
+      <label for="url">Enter pH Value:</label>
+      <input name="ph" type="number" placeholder="Enter pH in range 0-14"  step="0.01" min="0" max="14" required>
+    </div>
+    <br>
+  
+    <div class="friend2field">
+      <label for="url">Enter Rainfall Value:</label>
+      <input name="rainfall" type="number" placeholder="Enter value in mm/month" step="0.01" min="0" required>
+    </div>
+    <button type="submit" class="btn btn-dark mt-">Predict</button>
+    <br>
+
+
+
+    </form>
+</div>
+
+<footer class="footer" id="fo">
+  <div class="footer-content">
+    <div class="footer-info">
+      <h2 class="footer-info-title">CropSense</h2>
+      <p class="footer-info-text">CropSense: Cultivating Tomorrow's Harvest with Data-driven Precision</p>
+      <div class="contact-info">
+          <p class="fp">Contact Us:</p>
+          <a href="tel:+1234567890"> +1 234 567 890</a><br>
+          <a href="mailto:contact@pixet.com">contact@pixet.com</a>
+      </div>
+    </div>
+    <div class="footer-logo" href = "#na">
+      <img src="Logo.png" alt="Pixet Logo">
+    </div>
+  </div>
+</footer> 
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
